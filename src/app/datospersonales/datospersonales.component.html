@@ -1,0 +1,12 @@
+<div class="card-group">
+  <div  *ngFor="let i of personInfo" class="card">
+    <img src="{{ i.foto}}" class="card-img-top" alt="Persona1">
+    <div class="card-body">
+      <h5 class="card-title">{{i.nombre}}</h5>
+      <p class="card-text">{{i.grado}}</p>
+      <p class="card-text">{{i.telefono}}</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      <a [routerLink]="['/detalles', i.id]" class="btn btn-primary">Mas informacion</a>
+    </div>
+</div>
+</div>

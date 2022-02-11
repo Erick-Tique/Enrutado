@@ -1,0 +1,49 @@
+<p>Llene los siguientes campos:</p>
+<form [formGroup]="formulario1">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input formControlName="correo" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+
+    <div *ngIf="correo.errors && correo.touched" >
+      <p *ngIf="correo.hasError('email')">
+        *Correo Invalido*
+      </p>
+      <p *ngIf="correo.hasError('required')">
+        *Campo requerido*
+      </p>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1">
+
+    <div *ngIf="password.errors && password.touched" >
+      <p *ngIf="password.hasError('required')">
+        *Password Requerido*
+      </p>
+      <p *ngIf="password.hasError('minLength')">
+        *El password debe contener 5 caracteres mininmo*
+      </p>
+      <p *ngIf="password.hasError('pattern')">
+        *Error de patron*
+      </p>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Telefono</label>
+    <input formControlName="telefono" type="texto" class="form-control" id="exampleInputtelefono">
+
+    <div *ngIf="telefono.errors && telefono.touched" >
+      <p *ngIf="telefono.hasError('required')">
+        *telefono requerido*
+      </p>
+  </div>
+  </div>
+
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
